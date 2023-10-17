@@ -16,7 +16,10 @@ class _ContainerTestState extends State<ContainerTest> {
           backgroundColor: Colors.blue,
         ),
         body: Row(
-          children: [
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
             Column(
               children: [
                 Container(
@@ -85,6 +88,21 @@ class _ContainerTestState extends State<ContainerTest> {
             ),
           ],
         ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+            icon: Icon(Icons.home,
+            ),
+            label: 'Home'),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.person,
+            ),
+            label: 'Profile'),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notification'
+        ),
+
+      ]),
 
     );
   }
