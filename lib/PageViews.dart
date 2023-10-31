@@ -12,15 +12,10 @@ class _PageViewsState extends State<PageViews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tap'),
+        title: Text('Test'),
+        backgroundColor: Colors.deepPurple,
       ),
-     body: Center(
-       child: Container(
-         color: Colors.green,
-         width: 100,
-         height: 100,
-       ),
-     ),
+     body: Image.asset('assets/flutterimage.jpg'),
     );
   }
 }
