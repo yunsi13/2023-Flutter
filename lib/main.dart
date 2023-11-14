@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/PageViews.dart';
 import 'ContainerTest.dart';
+import 'RadioListTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: PageViews(),
+      home: RadioListTest(),
     );
   }
 }
