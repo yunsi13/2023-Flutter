@@ -5,6 +5,10 @@ import 'RadioListTest.dart';
 import 'FirstPage.dart';
 import 'SecondPage.dart';
 import 'MyHomePage.dart';
+import 'MyCustomForm.dart';
+import 'MyCustomForm2.dart';
+import 'BmiMain.dart';
+import 'BmiResult.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(),
-    );
+      home:  BmiResult(height: 1.0, weight: 2.0),
+      );
   }
 }
 
