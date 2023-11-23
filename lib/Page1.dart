@@ -1,9 +1,11 @@
-import 'dart:html';
-import 'dart:js';
-import 'package:carousel_slider/carousel_slider.dart';
-
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+final imageItems = [
+  'assets/gominsi.jpg',
+  'assets/gominsi2.jpg',
+  'assets/eunwoo.jpg',
+];
 
 class Page1 extends StatelessWidget {
   const Page1({super.key});
@@ -123,17 +125,12 @@ class Page1 extends StatelessWidget {
     );
   }
   Widget _buildMiddle() {
-    final imageItems = [
-      'assets/gominsi.jpg',
-      'assets/gominsi.jpg',
-      'assets/eunwoo.jpg',
-    ];
-
     return CarouselSlider(
-        options: CarouselOptions(
-          height: 400.0,
+      options: CarouselOptions(
+        height: 200.0,
+        autoPlay: true,
         ),
-    items: [1,2,3,4,5].map((i)
+    items: imageItems.map((path)
     {
       return Builder(
         builder: (BuildContext context) {
@@ -149,15 +146,13 @@ class Page1 extends StatelessWidget {
           );
       },
       );
-    }
-    ).toList(),
+    }).toList(),
     );
   }
   Widget _buildBottom() {
-    final items = List.generate(
-      10, (i){
+    final items = List.generate(10, (i){
         return ListTile(
-          leading: Icon(Icon.notifications.name),
+          leading: Icon(Icons.notifications_none),
           title: Text('공지사항입니다.'),
         );
     });
