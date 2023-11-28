@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home:  BmiResult(height: 1.0, weight: 2.0),
+      home:  BmiMain(),
       );
   }
 }
