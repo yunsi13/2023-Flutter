@@ -24,7 +24,7 @@ class BmiResult extends StatelessWidget {
               style: TextStyle(fontSize: 36),
             ),
             SizedBox(height: 16,),
-            _buildIcon(),
+            _buildIcon(bmi),
           ],
         ),
       ),
@@ -42,10 +42,9 @@ class BmiResult extends StatelessWidget {
       result =  '1단계 비만';
     } else if(bmi>23){
       result = '과체중';
-    } else(bmi>18.5){
+    } else if(bmi>18.5){
       result = '정상';
     }
-
     return result;
   }
   Widget _buildIcon(double bmi){
