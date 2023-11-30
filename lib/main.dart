@@ -9,6 +9,7 @@ import 'MyCustomForm.dart';
 import 'MyCustomForm2.dart';
 import 'BmiMain.dart';
 import 'BmiResult.dart';
+import 'StopWatchPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home:  BmiMain(),
+      home:  StopWatchPage(),
       );
   }
 }
