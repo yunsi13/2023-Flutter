@@ -12,7 +12,11 @@ import 'BmiResult.dart';
 import 'StopWatchPage.dart';
 import 'ToDoListPage.dart';
 
-void main() => runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized()
+  await Firebase.initializeApp(options: DefaultFirebaseOptions) //덜 씀 뭐 써야 하는 지 모름 ㅜㅜ
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "445371426763",
+    "project_id": "flutter2023todo",
+    "storage_bucket": "flutter2023todo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445371426763:android:81e72821a72d2fb39a784e",
+        "android_client_info": {
+          "package_name": "com.example.flutterapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9H_PVG8fYrYyMbUy304gkJMsx3ooL6L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

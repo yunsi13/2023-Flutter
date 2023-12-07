@@ -42,11 +42,20 @@ class _ToDoListPageState extends State<ToDoListPage> {
                 ),
               ],
             ),
-            Expanded(
-                child: ListView(
-                  //이해필요
-                  children: _items.map((todo) => _buildItemWidget(todo)).toList(),
-                ),
+            StreamBuilder<QuerySnapshot>( //firebase 연동 못 시킴
+              stream: FirebaseFirestor.instonce.collection('todo2').snapshots(),
+              builder: (context, snapshot) {
+                if(!snapshot.hasData){
+                  return CircularProgressIndicator();
+                }
+                final documents = snapshot.data!.docs;
+                return Expanded(
+                    child: ListView(
+                      //이해필요
+                      children: documents.map((todo) => _buildItemWidget(doc)).toList(),
+                    ),
+                );
+              }
             ),
           ],
         ),
@@ -55,8 +64,10 @@ class _ToDoListPageState extends State<ToDoListPage> {
   }
 
   Widget _buildItemWidget(ToDo todo) {
+    final todo = ToDo(doc['title'], isDone: doc['isDone']);
+
     return ListTile(
-      onTap: (){},
+      onTap: () => _toggleToDo(todo),
       title: Text(
         todo.title,
         style: todo.isDone //완료일 때 아닐 때
@@ -68,7 +79,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
       ),
       trailing:IconButton(
         icon: Icon(Icons.delete_forever),
-        onPressed: (){},
+        onPressed: () => _deleteToDo(doc),
       )
     );
   }
@@ -77,6 +88,18 @@ class _ToDoListPageState extends State<ToDoListPage> {
     setState(() {
       _items.add(todo);
       _toDoController.text = '';
+    });
+  }
+
+  void _deleteToDo(ToDo todo) {
+    setState(() {
+      _items.remove(todo);
+    });
+  }
+
+  void _toggleToDo(ToDo todo) {
+    setState(() {
+      todo.isDone = !todo.isDone;
     });
   }
 }
